@@ -6,6 +6,7 @@ import Noticia from './Noticia'
 function ListadoNoticias() {
 
     const { noticias } = useNoticias()
+    console.log(noticias)
 
   return (
     <>
@@ -22,11 +23,16 @@ function ListadoNoticias() {
             spacing={2}
         >
             {noticias.map(noticia => (
-                <Noticia 
-                    key={noticia.url}
-                    noticia={noticia}
-                />
+                noticia.author !== null &&   
+                    <Noticia 
+                         key={noticia.url}
+                         noticia={noticia}
+                     />
+                     
             ))}
+            
+            
+
         </Grid>
     </>
   )
